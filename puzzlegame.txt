@@ -134,9 +134,9 @@ DEFPROCinput
    IF FNcanmove(x%-1,y%) THEN ox%=x%:x%-=1
   WHEN "x":
    IF FNcanmove(x%+2,y%) THEN ox%=x%:x%+=1
-  WHEN "/":
+  WHEN "m":
    TIME=t%
-  WHEN "'":
+  WHEN "k":
    piece$=MID$(piece$,3,1) + MID$(piece$,1,1) + MID$(piece$,4,1) + MID$(piece$,2,1)
    redrawpiece%=TRUE
    PROCmove
@@ -471,7 +471,7 @@ DEFPROCtitlescreen
  PRINT
  PROCmessage("  Controls:  ")
  PROCmessage("             ")
- PROCmessage("   Z X / '   ")
+ PROCmessage("   Z X M K   ")
  PRINT'
  PROCmessage("Press a key to begin")
  key%=GET
