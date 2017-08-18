@@ -540,8 +540,8 @@ DEFFNmenu(title$,options$,currentchoice%)
   VDU31,4,9+(cursor%*2):PROCvd(1)
   oldcursor%=cursor%
   k$=FNtolowercase(GET)
-  IF (k$="'") THEN cursor%=cursor%-1
-  IF (k$="/") THEN cursor%=cursor%+1
+  IF (k$="k") THEN cursor%=cursor%-1
+  IF (k$="m") THEN cursor%=cursor%+1
   IF cursor%<0 THEN cursor%=o%
   IF cursor%>o% THEN cursor%=0
   IF (k$=CHR$13) THEN choice%=cursor%
